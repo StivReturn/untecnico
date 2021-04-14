@@ -1,16 +1,18 @@
 import React from 'react'
-import {} from '@react-navigation/stack'
+import {createStackNavigator} from '@react-navigation/stack'
+
+import Requests from '../screens/Requests'
 
 const Stack = createStackNavigator()
 
 export default function RequestsStack() {
     return (
-        <Stack.StackNavigator>
-            <Stack.screen
+        <Stack.Navigator>
+            <Stack.Screen
                 name ="requests"
-                component={Requests}
+                component= {Requests}
                 options={{ title: "Solicitar Servicios"}}
             />
-        </Stack.StackNavigator>
+        </Stack.Navigator>
     )
 }

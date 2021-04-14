@@ -1,18 +1,21 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import { Icon } from 'react-native-elements/dist/icons/Icon'
+import { Icon } from 'react-native-elements'
+
+
 
 //import Technical from '../screens/Technical'
-import Favorites from '../screens/Favorites'
 //import TopTechnicals from '../screens/TopTechnicals'
-import Account from '../screens/Account'
-import Chat from '../screens/Chat'
-import Request from '../screens/Request'
+import RequestsStack from './RequestsStack'
+import ChatStack from './ChatStack'
+import FavoritesStack from './FavoritesStack'
+import AccountStack from './AccountStack'
 
 const Tab = createBottomTabNavigator()
 
 export default function Navigation() {
+    
     const screenOptions = (route, color) =>{
         let iconName
         switch (route.name) {
@@ -23,17 +26,17 @@ export default function Navigation() {
                 iconName="chat"
                 break;
             case "favorites":
-                iconName="heart"
+                iconName="cards-heart"
                 break;
             case "account":
-                iconName="account"
+                iconName="account-circle"
                 break;
         }
         return(
             <Icon
-                type="material-comunity"
+                type="material-community"
                 name={iconName}
-                siza={22}
+                size={30}
                 color={color}
             />
         )
@@ -52,23 +55,23 @@ export default function Navigation() {
                 })}
             >
                 <Tab.Screen
-                    name="request"
-                    component={Request}
+                    name="requests"
+                    component={RequestsStack}
                     options={{title: "Solicitar servicio"}}
                 />
                 <Tab.Screen
                     name="chat"
-                    component={Chat}
+                    component={ChatStack}
                     options={{title: "Chat"}}
                 />
                 <Tab.Screen
                     name="favorites"
-                    component={Favorites}
+                    component={FavoritesStack}
                     options={{title: "Favoritos"}}
                 />
                 <Tab.Screen
                     name="account"
-                    component={Account}
+                    component={AccountStack}
                     options={{title: "Cuenta"}}
                 />
             </Tab.Navigator>
