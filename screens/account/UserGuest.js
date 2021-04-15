@@ -1,14 +1,58 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import Loading from '../../components/Loading'
+import { StyleSheet, Text,  View, ScrollView, Image } from 'react-native'
+import { Button } from 'react-native-elements'
 
 export default function UserGuest() {
     return (
-        <View>
-            <Text>UserGuest...</Text>
-            <Loading isVisible={true} text="Cargando..."/>
-        </View>
+        <ScrollView
+            centerContent
+            style= {styles.viewBody} 
+        >
+            <Image
+                source={require("../../assets/UnTecnico.png")}
+                resizeMode="contain"
+                style={styles.image}
+            />
+            <Text style={styles.title}>Consulta tu perfil en Un Técnico</Text>
+            
+            <Text style={styles.description}> 
+                ¿Tienes una urgencia y necesitas un profesional? o ¿Quieres ofrecer tus servicios? ¡Regístrate y hazlo! 
+            </Text>
+            <Button
+                buttonStyle={styles.button}
+                title="Ver perfil"
+                onPress={()=> console.log("click")}
+            />
+        </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    viewBody:{
+        marginHorizontal: 30
+    },
+    image:{
+        height: 400,
+        width: "100%",
+        marginVertical: 10,
+        textAlign: "center" 
+    },
+    title: {
+        color:"#7c441b",
+        fontWeight: "bold",
+        fontSize: 20,
+        marginBottom: 20,
+        textAlign: "center"        
+    },
+    description:{
+        color:"#926725",
+        fontWeight: "bold",
+        fontSize: 15,
+        marginBottom: 20,
+        textAlign: "center"    
+    },
+    button:{
+        backgroundColor:"#926725"
+    }
+  
+})

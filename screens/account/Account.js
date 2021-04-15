@@ -14,9 +14,9 @@ export default function Account(){
       user ? setLogin(true) : setLogin(false)
     }, [])
 
-    if (login == false){
-      return <Loading isVisible={true} text="Cargando..."/>
-    }
+   // if (login == false){
+   //   return <Loading isVisible={true} text="Cargando..."/>
+    //}
     return login ? <UserLogged/> : <UserGuest/>
 }
 const styles = StyleSheet.create({}) 
