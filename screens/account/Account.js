@@ -25,7 +25,6 @@ const Account = () => {
 export default Account
 
 const styles = StyleSheet.create({})*/
-
 import React, {useState} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { firebaseApp } from "../../utilies/firebase"
