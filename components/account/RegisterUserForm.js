@@ -64,10 +64,10 @@ export default function RegisterUserForm() {
             setErrorConfirm("La contraseña y la confirmación no coinciden")
             isValid = false
         }
-        if (formData.name(null)){
+        /*if (formData.name(null)){
             setErrorName("Debes ingresar tu nombre completo")
             isValid = false
-        }
+        }*/
         return isValid
     }
 
@@ -88,11 +88,11 @@ export default function RegisterUserForm() {
                 defaultValue={formData.email}
             />
             <Input
-                containerStyle={styles.input}
+            /*    containerStyle={styles.input}
                 placeholder="Ingresa tu nombre completo..."
                 onChange={(e) => onChange(e, "name")}
                 errorMessage={errorName}
-                defaultValue={formData.name}
+              */  defaultValue={formData.name}
             />
             <Input
                 containerStyle={styles.input}
@@ -135,7 +135,7 @@ export default function RegisterUserForm() {
                 onPress={()=> doregisterUser()}
             />
             <Loading
-                isVisible={setLoading}
+                isVisible={loading}
                 text="Registrando Usuario"
             />
         </View>
