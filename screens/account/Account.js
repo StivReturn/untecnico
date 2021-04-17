@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import { StyleSheet } from 'react-native'
 import Loading from '../../components/Loading'
-import { getCurrentUser, isUserLogged } from '../../Utilies/actions'
+import { getCurrentUser } from '../../Utilies/actions'
 import { useFocusEffect } from '@react-navigation/native'
 
 import UserGuest from './UserGuest'

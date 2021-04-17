@@ -12,7 +12,6 @@ export default function Login() {
             style={styles.image}
         />
         <View style={styles.container}>
-            <Text>Login Form</Text>
             <CreateAccount/>
         </View>
         <Divider style={styles.divider}/>
@@ -26,7 +25,7 @@ function CreateAccount(props){
     return(
         <Text 
             style= {styles.register}
-            onPress={()=> navigation.navigate("register")}
+            onPress={()=> navigation.navigate("usertype")}
         >
             ¿Aún no tienes una cuenta registrada?{" "}
             <Text style={styles.btnRegister}>
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
 image:{
     height: 150,
     width: "100%",
-    marginBottom: 40
+    marginBottom: 30
 },
 container:{
     marginHorizontal:40
@@ -53,11 +52,13 @@ divider:{
 register:{
     marginTop: 15,
     marginHorizontal: 10,
-    alignSelf: "center",
+    fontSize:15,
+    textAlign:"center",
 },
 btnRegister:{
     color:"#eca334",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontSize: 30
 }
 
 }) 

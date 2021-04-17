@@ -74,6 +74,7 @@ export default function Navigation() {
                     component={AccountStack}
                     options={{title: "Cuenta"}}
                 />
+                
             </Tab.Navigator>
         </NavigationContainer>
     )

@@ -10,7 +10,7 @@ import { validateEmail } from '../../Utilies/helpers'
 import { registerUser } from '../../Utilies/actions'
 
 
-export default function RegisterUserForm() {
+export default function RegisterTechnicalForm() {
     const [showPassword, setShowPassword] = useState(false)
     const [formData, setFormData] = useState(defaultFormValues())
     const [errorEmail, setErrorEmail] = useState("")
@@ -31,7 +31,7 @@ export default function RegisterUserForm() {
         }
 
         setLoading(true)
-        const result = await registerUser(formData.email, formData.password, formData.name)
+        const result = await registerUser(formData.email, formData.password)
         setLoading(false)
         if(!result.statusResponse){
             setErrorEmail(result.error)
@@ -64,17 +64,17 @@ export default function RegisterUserForm() {
             setErrorConfirm("La contraseña y la confirmación no coinciden")
             isValid = false
         }
-        if (formData.name(null)){
+        if (!validateEmail(formData.name)){
             setErrorName("Debes ingresar tu nombre completo")
             isValid = false
         }
         return isValid
     }
 
-    return (     
+    return (
         <KeyboardAwareScrollView>
         <Image
-            source={require("../../assets/Usuario.png")}
+            source={require("../../assets/Tecnico.png")}
             resizeMode="contain"
             style={styles.image}
         />            
@@ -129,7 +129,7 @@ export default function RegisterUserForm() {
                 }
             />
             <Button
-                title="Registrar Nuevo Usuario"
+                title="Siguiente"
                 containerStyle={styles.btnContainer}
                 buttonStyle={styles.btn}
                 onPress={()=> doregisterUser()}
@@ -143,7 +143,7 @@ export default function RegisterUserForm() {
     )
 }
 const defaultFormValues = () =>{
-    return {email: "", password:"", confirm:"", name:""}
+    return {email: "", password:"", confirm:"", nombre:""}
 }
 
 const styles = StyleSheet.create({
