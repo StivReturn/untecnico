@@ -1,12 +1,63 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, Image, StyleSheet, Text, View } from 'react-native'
+import { Divider } from 'react-native-elements'
+import { useNavigation } from '@react-navigation/native'
 
 export default function Login() {
     return (
-        <View>
-            <Text>Login</Text>
+        <ScrollView>
+        <Image
+            source={require("../../assets/UnTecnico.png")}
+            resizeMode="contain"
+            style={styles.image}
+        />
+        <View style={styles.container}>
+            <Text>Login Form</Text>
+            <CreateAccount/>
         </View>
+        <Divider style={styles.divider}/>
+        </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({})
+function CreateAccount(props){
+    const navigation = useNavigation()
+   
+    return(
+        <Text 
+            style= {styles.register}
+            onPress={()=> navigation.navigate("register")}
+        >
+            ¿Aún no tienes una cuenta registrada?{" "}
+            <Text style={styles.btnRegister}>
+                Regístrate!
+            </Text>
+        </Text>
+    )
+}
+
+const styles = StyleSheet.create({
+
+image:{
+    height: 150,
+    width: "100%",
+    marginBottom: 40
+},
+container:{
+    marginHorizontal:40
+},
+divider:{
+    backgroundColor: "#eca334",
+    margin: 40
+},
+register:{
+    marginTop: 15,
+    marginHorizontal: 10,
+    alignSelf: "center",
+},
+btnRegister:{
+    color:"#eca334",
+    fontWeight: "bold"
+}
+
+}) 
