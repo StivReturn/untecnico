@@ -8,23 +8,23 @@ export default function UserType() {
     let user = ""
     
     return (
-        <KeyboardAwareScrollView>           
-                <Image
+        <KeyboardAwareScrollView>   
+                <Image                
                     source={require("../../assets/Tecnico.png")}
                     resizeMode="contain"
-                     style={styles.image}                     
+                     style={styles.image}   
+                                   
                 />
                 <Text style={styles.text}   
                 onPress={()=> navigation.navigate("registertechnical")}  
                 userType= "Technical"                
                 >
                     Técnico
-                </Text>
-                
-            <Image
+                </Text>                
+                <Image
                 source={require("../../assets/Usuario.png")}
                 resizeMode="contain"
-                style={styles.image}
+                style={styles.image}                
             />
             <Text style={styles.text}
                 onPress={()=> navigation.navigate("registeruser")}
