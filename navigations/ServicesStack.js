@@ -1,13 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import Services from '../screens/Services'
+import Requests from '../screens/Requests'
+
+
 
 export default function ServicesStack() {
         return (
             <Stack.Navigator>
                 <Stack.Screen
-                    name ="services"
-                    component= {Services}
+                    name ="request"
+                    component= {Requests}
                     options={{ title: "Solicitar Servicios"}}
                 />
             </Stack.Navigator>
